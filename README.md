@@ -1,1 +1,1 @@
-# -ai-practitioner
+# ai-practitioner
