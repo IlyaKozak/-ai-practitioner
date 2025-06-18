@@ -1,5 +1,10 @@
 import fastify from "fastify";
 
+import { loadJsonFilesToDB } from "./loadDocs";
+
+const directoryPath = "./collection/0";
+loadJsonFilesToDB(directoryPath);
+
 const server = fastify();
 
 server.get("/ping", async (request, reply) => {

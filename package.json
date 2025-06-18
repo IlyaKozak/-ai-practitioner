@@ -11,7 +11,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "fastify": "^5.4.0"
+    "@chroma-core/default-embed": "^0.1.8",
+    "@langchain/community": "^0.3.46",
+    "@langchain/core": "^0.3.59",
+    "chromadb": "^3.0.3",
+    "fastify": "^5.4.0",
+    "langchain": "^0.3.28"
   },
   "devDependencies": {
     "@types/node": "^24.0.3",
