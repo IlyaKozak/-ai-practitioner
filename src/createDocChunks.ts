@@ -1,13 +1,11 @@
-import fs from "fs/promises";
-import path from "path";
-import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
-import { Document } from "langchain/document";
+import fs from 'fs/promises';
+import path from 'path';
+import { RecursiveCharacterTextSplitter } from 'langchain/text_splitter';
+import { Document } from 'langchain/document';
 
-import { Artwork } from "./docType";
-import { removeNulls } from "./removeNullsFromObject";
-
-const CHUNK_SIZE = 500;
-const CHUNK_OVERLAP = 50;
+import { Artwork } from './types/docType';
+import { removeNulls } from './removeNullsFromObject';
+import { CHUNK_OVERLAP, CHUNK_SIZE } from './const';
 
 export async function createDocChunks(directoryPath: string) {
   const docs: Document[] = [];
@@ -15,7 +13,7 @@ export async function createDocChunks(directoryPath: string) {
 
   for (const filePath of filesPaths) {
     const fullFilePath = path.join(directoryPath, filePath);
-    const fileContent = await fs.readFile(fullFilePath, "utf-8");
+    const fileContent = await fs.readFile(fullFilePath, 'utf-8');
     if (!fileContent.trim()) continue;
     const artwork: Artwork = JSON.parse(fileContent);
 

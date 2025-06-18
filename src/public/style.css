@@ -1,0 +1,135 @@
+:root {
+  --primary-bg: #343541;
+  --message-bg: #444654;
+  --user-bg: #343541;
+  --text-color: #ececf1;
+  --accent-color: #10a37f;
+  --input-bg: #40414f;
+  --border-color: #555766;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--primary-bg);
+  color: var(--text-color);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#chat-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.message {
+  display: flex;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 15px 20px;
+  border-radius: 5px;
+  line-height: 1.5;
+}
+
+.ai-message {
+  background-color: var(--message-bg);
+}
+
+.user-message {
+  background-color: var(--user-bg);
+}
+
+.avatar {
+  width: 80px;
+  height: 30px;
+  border-radius: 2px;
+  margin-right: 15px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.ai-avatar {
+  background-color: var(--accent-color);
+}
+
+.user-avatar {
+  background-color: #999;
+}
+
+.message-content {
+  max-width: 900px;
+  max-height: 435px;
+  overflow-y: auto;
+  margin: 10px auto;
+  display: grid;
+  gap: 10px;
+}
+
+#input-container {
+  padding: 15px 20px;
+  border-top: 1px solid var(--border-color);
+  background-color: var(--primary-bg);
+}
+
+#input-form {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  gap: 10px;
+}
+
+#user-input {
+  flex: 1;
+  padding: 12px 15px;
+  border-radius: 5px;
+  border: 1px solid var(--border-color);
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  font-size: 16px;
+  outline: none;
+}
+
+#user-input:focus {
+  border-color: var(--accent-color);
+}
+
+#submit-btn {
+  padding: 0 15px;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s;
+}
+
+#submit-btn:hover {
+  background-color: #0d8e6d;
+}
+
+#submit-btn:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+a {
+  color: var(--accent-color);
+}
+
+.hidden {
+  display: none;
+}

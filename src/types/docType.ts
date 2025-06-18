@@ -14,8 +14,8 @@ export type Artwork = {
   id: number | string;
   image: string;
   image_copyright: string | null;
-  image_height: number | "";
-  image_width: number | "";
+  image_height: number | '';
+  image_width: number | '';
   inscription: string | null;
   life_date: string;
   markings: string | null;
@@ -31,4 +31,15 @@ export type Artwork = {
   style: string | null;
   text: string | null;
   title: string;
+};
+
+export type DocToLLM = {
+  artist: string;
+  classification: string;
+  continent: string;
+  country: string;
+  dated: string;
+  id: number | string;
+  source: string;
+  chunk: string;
 };
