@@ -1,12 +1,10 @@
 import fetch from 'node-fetch';
 
-import { PROMPT } from './const';
-
 export async function askLLM(question: string, docsToLLM: string) {
   const response = await fetch(process.env.HF_URL!, {
     method: 'POST',
     headers: {
-      Authorization: `Bearer ${process.env.HF_TOKEN}`,
+      Authorization: `Bearer ${process.env.HF_TOKEN!}`,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
@@ -15,7 +13,7 @@ export async function askLLM(question: string, docsToLLM: string) {
       messages: [
         {
           role: 'system',
-          content: PROMPT + docsToLLM,
+          content: process.env.PROMPT! + docsToLLM,
         },
         {
           role: 'user',

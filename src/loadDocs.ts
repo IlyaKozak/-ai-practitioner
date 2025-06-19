@@ -1,13 +1,15 @@
 import { Collection } from 'chromadb';
 
 import { createDocChunks } from './createDocChunks';
-import { BATCH_SIZE } from './const';
+
+const BATCH_SIZE = Number(process.env.BATCH_SIZE!);
 
 export async function loadDocsToDB(
   subfolders: string[],
   collection: Collection | null
 ): Promise<void> {
   if (!collection) return;
+
   for (const directoryPath of subfolders) {
     const chunkDocs = await createDocChunks(directoryPath);
 

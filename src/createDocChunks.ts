@@ -5,7 +5,6 @@ import { Document } from 'langchain/document';
 
 import { Artwork } from './types/docType';
 import { removeNulls } from './removeNullsFromObject';
-import { CHUNK_OVERLAP, CHUNK_SIZE } from './const';
 
 export async function createDocChunks(directoryPath: string) {
   const docs: Document[] = [];
@@ -36,8 +35,8 @@ export async function createDocChunks(directoryPath: string) {
   }
 
   const splitter = new RecursiveCharacterTextSplitter({
-    chunkSize: CHUNK_SIZE,
-    chunkOverlap: CHUNK_OVERLAP,
+    chunkSize: Number(process.env.CHUNK_SIZE!),
+    chunkOverlap: Number(process.env.CHUNK_OVERLAP!),
     separators: [',"'],
   });
   const chunkDocs = await splitter.splitDocuments(docs);

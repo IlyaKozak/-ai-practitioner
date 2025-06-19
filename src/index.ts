@@ -8,7 +8,6 @@ import { getSubFoldersToLoad } from './getSubfoldersToLoad';
 import { loadSchema, Query, querySchema } from './types/querySchemas';
 import { queryDB } from './queryDB';
 import { askLLM } from './askLLM';
-import { COLLECTION_NAME, COLLECTION_PATH } from './const';
 import { DocToLLM } from './types/docType';
 import { swaggerOptions, swaggerUiOptions } from './swaggerOptions';
 
@@ -60,7 +59,7 @@ server.register((_, __, done) => {
     url: '/loadDocs',
     schema: loadSchema,
     handler: async () => {
-      const subfolders = await getSubFoldersToLoad(COLLECTION_PATH);
+      const subfolders = await getSubFoldersToLoad(process.env.COLLECTION_PATH!);
       if (!subfolders) return 'Check folder path to collection!';
 
       loadDocsToDB(subfolders, collection);
@@ -71,14 +70,14 @@ server.register((_, __, done) => {
   done();
 });
 
-server.listen({ port: 8080 }, async (err, address) => {
+server.listen({ port: Number(process.env.PORT) }, async (err, address) => {
   if (err) {
     console.error(err);
     process.exit(1);
   }
 
   collection = await client.getOrCreateCollection({
-    name: COLLECTION_NAME,
+    name: process.env.COLLECTION_NAME!,
   });
   console.log(collection);
   console.log(`Server listening at ${address}`);

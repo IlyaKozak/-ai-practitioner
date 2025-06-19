@@ -5,7 +5,7 @@ export const swaggerOptions = {
       description: 'RAG Question-Answering System API',
       version: '1.0.0',
     },
-    host: 'localhost:8080',
+    host: process.env.SWAGGER_HOST,
     schemes: ['http'],
     consumes: ['application/json'],
     produces: ['application/json'],
