@@ -18,6 +18,14 @@
 
 **Usage**:
 
+1. Update `.env.example` with your environment settings
+
+2. Run ChromaDB `docker compose up`
+
+3. Run development mode: `npm run dev`
+
+4. Run build `npm run build` & start app `npm start`
+
 ---
 
 ### Part 1: Data Preparation and Vectorization
