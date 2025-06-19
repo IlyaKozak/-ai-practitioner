@@ -1,4 +1,4 @@
-# ai-practitioner
+# RSSchool "AWS AI Practitioner" course task
 
 **Course**: https://rs.school/courses/aws-ai
 
@@ -13,6 +13,7 @@
 - `deepseek/deepseek-v3-0324` LLM via Hugging Face API
 
 **Diagram**:
+<img src="https://github.com/IlyaKozak/-ai-practitioner/blob/main/ai.drawio.png">
 
 ---
 
