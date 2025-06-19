@@ -19,7 +19,7 @@
 
 **Usage**:
 
-1. Update `.env.example` with your environment settings
+1. Update `.env.example` with your environment settings & rename it to `.env`
 
 2. Run ChromaDB `docker compose up`
 
@@ -31,13 +31,13 @@
 
 ### Part 1: Data Preparation and Vectorization
 
-- [x] Documents from MIA art collection loaded to ChromaDB splitted in chunks with overlapping (parameters are defined in const.ts)
+- [x] Documents from MIA art collection loaded to ChromaDB splitted in chunks with overlapping (parameters are defined in `.env`)
 - [x] Embedding model `Xenova/all-MiniLM-L6-v2`
 
 ### Part 2: LLM Integration
 
 - [x] LLM `deepseek/deepseek-v3-0324` connected via Hugging Face API (provider novita)
-- [x] Prompt template is defined in const.ts
+- [x] Prompt template is defined in `.env`
 - [x] RAG Pipeline can be queried via Web Interface `/` / API call `/query` / Swagger-UI `/api`
 - [x] Answer is returned with sources from the MIA art collection dataset
 - [x] Logging is turned on for all processing stages
