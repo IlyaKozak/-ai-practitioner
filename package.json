@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.json && cp -rvT src/public build/public",
     "start": "node build/index.js",
     "dev": "nodemon --watch src src/index.ts"
   },
@@ -13,6 +13,8 @@
   "dependencies": {
     "@chroma-core/default-embed": "^0.1.8",
     "@fastify/static": "^8.2.0",
+    "@fastify/swagger": "^9.5.1",
+    "@fastify/swagger-ui": "^5.2.3",
     "@huggingface/inference": "^2.8.1",
     "@langchain/community": "^0.3.46",
     "@langchain/core": "^0.3.59",

@@ -1,5 +1,6 @@
 .env
 node_modules
+build
 chroma_data
 collection
 chunksLoadingLog.txt
